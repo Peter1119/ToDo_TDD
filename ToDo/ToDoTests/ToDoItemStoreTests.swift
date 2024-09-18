@@ -22,5 +22,17 @@ final class ToDoItemStoreTests: XCTestCase {
         
         var receivedItems: [ToDoItem] = []
         let token = sut.itemPublisher
+            .dropFirst() // 첫 번째 발행된 값을 제외
+            .sink { items in
+                receivedItems = items
+                publisherExpectation.fulfill() // 테스트 러너에게 더 이상 기다릴 필요 없음을 알려줌
+            }
+        
+        let toDoItem = ToDoItem(title: "Dummy")
+        sut.add(toDoItem)
+        
+        wait(for: [publisherExpectation], timeout: 1)
+        token.cancel()
+        XCTAssertEqual(receivedItems.first?.title, toDoItem.title)
     }
 }
