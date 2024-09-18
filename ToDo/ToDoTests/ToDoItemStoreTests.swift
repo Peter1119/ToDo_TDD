@@ -9,13 +9,18 @@ import XCTest
 @testable import ToDo
 
 final class ToDoItemStoreTests: XCTestCase {
+    
+    var sut: ToDoItemStore!
+    
+    override func setUpWithError() throws {
+        sut = ToDoItemStore()
+    }
 
-    override func setUpWithError() throws {}
-
-    override func tearDownWithError() throws {}
+    override func tearDownWithError() throws {
+        sut = nil
+    }
     
     func test_추가하면_publish가바뀌어야한다() throws {
-        let sut = ToDoItemStore()
         let toDoItem = ToDoItem(title: "Dummy")
         let receivedItems = try wait(for: sut.itemPublisher) {
             sut.add(toDoItem)
@@ -25,7 +30,6 @@ final class ToDoItemStoreTests: XCTestCase {
     }
     
     func test_체크_완료된아이템의변경사항을발행해야함() throws {
-        let sut = ToDoItemStore()
         let toDoItem = ToDoItem(title: "Dummy")
         sut.add(toDoItem)
         sut.add(ToDoItem(title: "Dummy 2"))
