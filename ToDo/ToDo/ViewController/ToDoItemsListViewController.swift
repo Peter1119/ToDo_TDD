@@ -6,16 +6,24 @@
 //
 
 import UIKit
+import Combine
 
 class ToDoItemsListViewController: UIViewController {
     let tableView = UITableView()
     var toDoItemStore: ToDoItemStoreProtocol?
+    private var items: [ToDoItem] = []
+    private var token: AnyCancellable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         layout()
         configuration()
+        
+        token = toDoItemStore?.itemPublisher
+            .sink(receiveValue: { [weak self] items in
+                self?.items = items
+            })
     }
     
     // MARK: - Layout
@@ -25,6 +33,22 @@ class ToDoItemsListViewController: UIViewController {
     
     // MARK: - Configuration
     private func configuration() {
-        
+        self.tableView.dataSource = self
+    }
+}
+
+extension ToDoItemsListViewController: UITableViewDataSource {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
+        return items.count
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        return UITableViewCell()
     }
 }
