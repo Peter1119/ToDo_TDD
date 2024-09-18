@@ -14,25 +14,13 @@ final class ToDoItemStoreTests: XCTestCase {
 
     override func tearDownWithError() throws {}
     
-    func test_추가하면_publish가바뀌어야한다() {
+    func test_추가하면_publish가바뀌어야한다() throws {
         let sut = ToDoItemStore()
-        let publisherExpectation = expectation(
-            description: "\(#file)에서 퍼블리셔를 기다립니다."
-        )
-        
-        var receivedItems: [ToDoItem] = []
-        let token = sut.itemPublisher
-            .dropFirst() // 첫 번째 발행된 값을 제외
-            .sink { items in
-                receivedItems = items
-                publisherExpectation.fulfill() // 테스트 러너에게 더 이상 기다릴 필요 없음을 알려줌
-            }
-        
         let toDoItem = ToDoItem(title: "Dummy")
-        sut.add(toDoItem)
+        let receivedItems = try wait(for: sut.itemPublisher) {
+            sut.add(toDoItem)
+        }
         
-        wait(for: [publisherExpectation], timeout: 1)
-        token.cancel()
         XCTAssertEqual(receivedItems, [toDoItem])
     }
 }

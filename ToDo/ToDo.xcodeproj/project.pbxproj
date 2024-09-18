@@ -10,6 +10,7 @@
 		359C763D2C9994DF00B5A659 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C763C2C9994DF00B5A659 /* LocationTests.swift */; };
 		359C763F2C999A9700B5A659 /* ToDoItemStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C763E2C999A9700B5A659 /* ToDoItemStoreTests.swift */; };
 		359C76412C999B0900B5A659 /* ToDoItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C76402C999B0900B5A659 /* ToDoItemStore.swift */; };
+		359C76442C9AB2D800B5A659 /* XCTestCase+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C76432C9AB2D800B5A659 /* XCTestCase+extension.swift */; };
 		35AF95F92C92D8EF00558869 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF95F82C92D8EF00558869 /* AppDelegate.swift */; };
 		35AF95FB2C92D8EF00558869 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF95FA2C92D8EF00558869 /* SceneDelegate.swift */; };
 		35AF95FD2C92D8EF00558869 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF95FC2C92D8EF00558869 /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 		359C763E2C999A9700B5A659 /* ToDoItemStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemStoreTests.swift; sourceTree = "<group>"; };
 		359C76402C999B0900B5A659 /* ToDoItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemStore.swift; sourceTree = "<group>"; };
 		359C76422C9AAC4C00B5A659 /* ToDo.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo.xctestplan; sourceTree = "<group>"; };
+		359C76432C9AB2D800B5A659 /* XCTestCase+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+extension.swift"; sourceTree = "<group>"; };
 		35AF95F52C92D8EF00558869 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35AF95F82C92D8EF00558869 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35AF95FA2C92D8EF00558869 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				35AF960F2C92D8F000558869 /* ToDoTests.swift */,
 				359C763C2C9994DF00B5A659 /* LocationTests.swift */,
 				359C763E2C999A9700B5A659 /* ToDoItemStoreTests.swift */,
+				359C76432C9AB2D800B5A659 /* XCTestCase+extension.swift */,
 			);
 			path = ToDoTests;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				359C763F2C999A9700B5A659 /* ToDoItemStoreTests.swift in Sources */,
+				359C76442C9AB2D800B5A659 /* XCTestCase+extension.swift in Sources */,
 				359C763D2C9994DF00B5A659 /* LocationTests.swift in Sources */,
 				35AF96102C92D8F000558869 /* ToDoTests.swift in Sources */,
 			);
