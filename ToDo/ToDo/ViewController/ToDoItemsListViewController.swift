@@ -9,6 +9,7 @@ import UIKit
 
 class ToDoItemsListViewController: UIViewController {
     let tableView = UITableView()
+    var toDoItemStore: ToDoItemStoreProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
