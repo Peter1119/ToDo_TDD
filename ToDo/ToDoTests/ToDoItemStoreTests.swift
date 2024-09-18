@@ -60,7 +60,7 @@ final class ToDoItemStoreTests: XCTestCase {
     }
     
     func test_완료표시로체크를하면_해당정보가저장되어업데이트된다() {
-        let sut1: ToDoItemStore? = ToDoItemStore(fileName: "dummy_store")
+        var sut1: ToDoItemStore? = ToDoItemStore(fileName: "dummy_store")
         let publisherExpectation = expectation(description: "Wait for publisher in \(#file)")
         let toDoItem = ToDoItem(title: "Dummy Title")
         sut1?.add(toDoItem)
