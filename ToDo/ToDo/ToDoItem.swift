@@ -13,6 +13,7 @@ struct ToDoItem: Equatable {
     let description: String?
     let timeStamp: Double
     let location: Location?
+    var done = false
     
     init(
         title: String,

@@ -23,4 +23,16 @@ final class ToDoItemStoreTests: XCTestCase {
         
         XCTAssertEqual(receivedItems, [toDoItem])
     }
+    
+    func test_체크_완료된아이템의변경사항을발행해야함() throws {
+        let sut = ToDoItemStore()
+        let toDoItem = ToDoItem(title: "Dummy")
+        sut.add(toDoItem)
+        sut.add(ToDoItem(title: "Dummy 2"))
+        let receivedItems = try wait(for: sut.itemPublisher) {
+            sut.check(toDoItem)
+        }
+        let doneItems = receivedItems.filter { $0.done }
+        XCTAssertEqual(doneItems, [toDoItem])
+    }
 }
