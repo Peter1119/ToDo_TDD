@@ -12,6 +12,7 @@
 		359C76412C999B0900B5A659 /* ToDoItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C76402C999B0900B5A659 /* ToDoItemStore.swift */; };
 		359C76442C9AB2D800B5A659 /* XCTestCase+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C76432C9AB2D800B5A659 /* XCTestCase+extension.swift */; };
 		359C76462C9AD7C100B5A659 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C76452C9AD7C100B5A659 /* Coordinate.swift */; };
+		359C76482C9ADA1500B5A659 /* FileManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C76472C9ADA1500B5A659 /* FileManager+.swift */; };
 		35AF95F92C92D8EF00558869 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF95F82C92D8EF00558869 /* AppDelegate.swift */; };
 		35AF95FB2C92D8EF00558869 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF95FA2C92D8EF00558869 /* SceneDelegate.swift */; };
 		35AF95FD2C92D8EF00558869 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF95FC2C92D8EF00558869 /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 		359C76422C9AAC4C00B5A659 /* ToDo.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo.xctestplan; sourceTree = "<group>"; };
 		359C76432C9AB2D800B5A659 /* XCTestCase+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+extension.swift"; sourceTree = "<group>"; };
 		359C76452C9AD7C100B5A659 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		359C76472C9ADA1500B5A659 /* FileManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+.swift"; sourceTree = "<group>"; };
 		35AF95F52C92D8EF00558869 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35AF95F82C92D8EF00558869 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35AF95FA2C92D8EF00558869 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				35AF962A2C92D97C00558869 /* Location.swift */,
 				359C76402C999B0900B5A659 /* ToDoItemStore.swift */,
 				359C76452C9AD7C100B5A659 /* Coordinate.swift */,
+				359C76472C9ADA1500B5A659 /* FileManager+.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				359C76462C9AD7C100B5A659 /* Coordinate.swift in Sources */,
 				35AF95FD2C92D8EF00558869 /* ViewController.swift in Sources */,
 				35AF95F92C92D8EF00558869 /* AppDelegate.swift in Sources */,
+				359C76482C9ADA1500B5A659 /* FileManager+.swift in Sources */,
 				35AF962B2C92D97C00558869 /* Location.swift in Sources */,
 				35AF96292C92D96F00558869 /* ToDoItem.swift in Sources */,
 				359C76412C999B0900B5A659 /* ToDoItemStore.swift in Sources */,
