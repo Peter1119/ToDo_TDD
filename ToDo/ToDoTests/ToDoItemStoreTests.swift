@@ -63,8 +63,8 @@ final class ToDoItemStoreTests: XCTestCase {
         let sut1: ToDoItemStore? = ToDoItemStore(fileName: "dummy_store")
         let publisherExpectation = expectation(description: "Wait for publisher in \(#file)")
         let toDoItem = ToDoItem(title: "Dummy Title")
-        sut1.add(toDoItem)
-        sut1.check(toDoItem)
+        sut1?.add(toDoItem)
+        sut1?.check(toDoItem)
         sut1 = nil
         let sut2 = ToDoItemStore(fileName: "dummy_store")
         var result: [ToDoItem]?
