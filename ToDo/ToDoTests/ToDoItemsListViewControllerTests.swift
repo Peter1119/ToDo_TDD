@@ -74,4 +74,18 @@ final class ToDoItemsListViewControllerTests: XCTestCase {
         )
         XCTAssertEqual(cell.titleLabel.text, titleUnderTest)
     }
+    
+    func test_cellForRowAt_cell에Date가표시되어야한다() throws {
+        let date = Date()
+        toDoItemStoreMock.itemPublisher.send([
+            ToDoItem(title: "dummy 1", timeStamp: date.timeIntervalSince1970)
+        ])
+        
+        let tableView = sut.tableView
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cell = try XCTUnwrap(
+            tableView.dataSource?.tableView(tableView, cellForRowAt: indexPath) as? ToDoItemCell
+        )
+        XCTAssertEqual(cell.dateLabel.text, sut.dateFormatter.string(from: date))
+    }
 }

@@ -23,4 +23,12 @@ final class ToDoItemCellTests: XCTestCase {
     func test_subViews에_titleLabel이있다() {
         XCTAssertTrue(sut.titleLabel.isDescendant(of: sut.contentView))
     }
+    
+    func test_subViews에_dateLabel이있다() {
+        XCTAssertTrue(sut.dateLabel.isDescendant(of: sut.contentView))
+    }
+    
+    func test_subViews에_locationLabel이있다() {
+        XCTAssertTrue(sut.locationLabel.isDescendant(of: sut.contentView))
+    }
 }

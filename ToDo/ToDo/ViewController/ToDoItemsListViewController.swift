@@ -13,6 +13,7 @@ class ToDoItemsListViewController: UIViewController {
     var toDoItemStore: ToDoItemStoreProtocol?
     private var items: [ToDoItem] = []
     private var token: AnyCancellable?
+    let dateFormatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +60,11 @@ extension ToDoItemsListViewController: UITableViewDataSource {
         ) as? ToDoItemCell else { return UITableViewCell() }
         let item = items[indexPath.row]
         cell.titleLabel.text = item.title
+        
+        let timestamp = item.timeStamp
+        let date = Date(timeIntervalSince1970: timestamp)
+        cell.dateLabel.text = dateFormatter.string(from: date)
+
         return cell
     }
 }
