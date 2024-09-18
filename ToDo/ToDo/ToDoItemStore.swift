@@ -17,8 +17,9 @@ class ToDoItemStore {
         }
     }
     
+    private let fileName: String
     init(fileName: String = "todoitems") {
-        
+        self.fileName = fileName
     }
     
     func add(_ item: ToDoItem) {
