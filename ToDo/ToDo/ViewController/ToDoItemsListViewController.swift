@@ -49,6 +49,8 @@ extension ToDoItemsListViewController: UITableViewDataSource {
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = ToDoItemCell()
+        cell.titleLabel.text = "dummy 1"
+        return cell
     }
 }

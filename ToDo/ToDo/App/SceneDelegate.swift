@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // UIWindow 인스턴스 생성
         let window = UIWindow(windowScene: windowScene)
         
-        let rootViewController = ViewController()
+        let rootViewController = ToDoItemsListViewController()
         window.rootViewController = rootViewController
         
         // window 설정 및 표시

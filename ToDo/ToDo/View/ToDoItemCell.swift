@@ -8,5 +8,5 @@
 import UIKit
 
 class ToDoItemCell: UITableViewCell {
-    
+    let titleLabel = UILabel()
 }
