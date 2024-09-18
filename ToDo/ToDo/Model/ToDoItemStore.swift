@@ -8,7 +8,12 @@
 import Foundation
 import Combine
 
-class ToDoItemStore {
+protocol ToDoItemStoreProtocol {
+    var itemPublisher: CurrentValueSubject<[ToDoItem], Never> { get set }
+    func check(_: ToDoItem)
+}
+
+class ToDoItemStore: ToDoItemStoreProtocol {
     // 실패하지 않는 ToDoItem 배열을 발행하는 CurrentValueSubject 발행자를 생성
     var itemPublisher = CurrentValueSubject<[ToDoItem], Never>([])
     private var items: [ToDoItem] = [] {
