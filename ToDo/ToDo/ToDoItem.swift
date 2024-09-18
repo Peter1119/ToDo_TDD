@@ -9,6 +9,7 @@
 import Foundation
 
 struct ToDoItem: Equatable {
+    let id: UUID
     let title: String
     let description: String?
     let timeStamp: Double
@@ -21,10 +22,15 @@ struct ToDoItem: Equatable {
         timeStamp: Double? = nil,
         location: Location? = nil
     ) {
+        self.id = UUID()
         self.title = title
         self.description = description
         self.timeStamp = timeStamp ?? 0
         self.location = location
+    }
+    
+    static func == (lhs: ToDoItem, rhs: ToDoItem) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 
