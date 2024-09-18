@@ -46,7 +46,7 @@ final class ToDoItemsListViewControllerTests: XCTestCase {
         XCTAssertEqual(result, 2)
     }
     
-    func test_cellForRowAt_cell이Title과함께나와야한다() throws {
+    func test_cellForRowAt_cell이Title이나와야한다() throws {
         let titleUnderTest = "dummy 1"
         toDoItemStoreMock.itemPublisher.send([
             ToDoItem(title: titleUnderTest)
@@ -54,6 +54,21 @@ final class ToDoItemsListViewControllerTests: XCTestCase {
         
         let tableView = sut.tableView
         let indexPath = IndexPath(row: 0, section: 0)
+        let cell = try XCTUnwrap(
+            tableView.dataSource?.tableView(tableView, cellForRowAt: indexPath) as? ToDoItemCell
+        )
+        XCTAssertEqual(cell.titleLabel.text, titleUnderTest)
+    }
+    
+    func test_cellForRowAt_cell이Title2가나와야한다() throws {
+        let titleUnderTest = "dummy 2"
+        toDoItemStoreMock.itemPublisher.send([
+            ToDoItem(title: "dummy 1"),
+            ToDoItem(title: titleUnderTest)
+        ])
+        
+        let tableView = sut.tableView
+        let indexPath = IndexPath(row: 1, section: 0)
         let cell = try XCTUnwrap(
             tableView.dataSource?.tableView(tableView, cellForRowAt: indexPath) as? ToDoItemCell
         )

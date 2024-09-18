@@ -34,6 +34,10 @@ class ToDoItemsListViewController: UIViewController {
     // MARK: - Configuration
     private func configuration() {
         self.tableView.dataSource = self
+        self.tableView.register(
+            ToDoItemCell.self,
+            forCellReuseIdentifier: "ToDoItemCell"
+        )
     }
 }
 
@@ -49,8 +53,12 @@ extension ToDoItemsListViewController: UITableViewDataSource {
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        let cell = ToDoItemCell()
-        cell.titleLabel.text = "dummy 1"
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: "ToDoItemCell",
+            for: indexPath
+        ) as? ToDoItemCell else { return UITableViewCell() }
+        let item = items[indexPath.row]
+        cell.titleLabel.text = item.title
         return cell
     }
 }
