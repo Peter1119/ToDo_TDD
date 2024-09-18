@@ -16,6 +16,7 @@
 		359C764F2C9AEE9800B5A659 /* ToDoItemsListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C764E2C9AEE9800B5A659 /* ToDoItemsListViewControllerTests.swift */; };
 		359C76512C9AEEB800B5A659 /* ToDoItemsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C76502C9AEEB800B5A659 /* ToDoItemsListViewController.swift */; };
 		359C76532C9AF24E00B5A659 /* ToDoItemStoreProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C76522C9AF24E00B5A659 /* ToDoItemStoreProtocolMock.swift */; };
+		359C76562C9AF69A00B5A659 /* ToDoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C76552C9AF69A00B5A659 /* ToDoItemCell.swift */; };
 		35AF95F92C92D8EF00558869 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF95F82C92D8EF00558869 /* AppDelegate.swift */; };
 		35AF95FB2C92D8EF00558869 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF95FA2C92D8EF00558869 /* SceneDelegate.swift */; };
 		35AF95FD2C92D8EF00558869 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF95FC2C92D8EF00558869 /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		359C764E2C9AEE9800B5A659 /* ToDoItemsListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemsListViewControllerTests.swift; sourceTree = "<group>"; };
 		359C76502C9AEEB800B5A659 /* ToDoItemsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemsListViewController.swift; sourceTree = "<group>"; };
 		359C76522C9AF24E00B5A659 /* ToDoItemStoreProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemStoreProtocolMock.swift; sourceTree = "<group>"; };
+		359C76552C9AF69A00B5A659 /* ToDoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemCell.swift; sourceTree = "<group>"; };
 		35AF95F52C92D8EF00558869 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35AF95F82C92D8EF00558869 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35AF95FA2C92D8EF00558869 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		359C76542C9AF68900B5A659 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				359C76552C9AF69A00B5A659 /* ToDoItemCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		35AF95EC2C92D8EF00558869 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				359C764B2C9AED1700B5A659 /* App */,
+				359C76542C9AF68900B5A659 /* View */,
 				359C764D2C9AEE4000B5A659 /* ViewController */,
 				359C764A2C9AED0700B5A659 /* Resource */,
 				359C764C2C9AED1F00B5A659 /* Model */,
@@ -335,6 +346,7 @@
 				359C76482C9ADA1500B5A659 /* FileManager+.swift in Sources */,
 				35AF962B2C92D97C00558869 /* Location.swift in Sources */,
 				35AF96292C92D96F00558869 /* ToDoItem.swift in Sources */,
+				359C76562C9AF69A00B5A659 /* ToDoItemCell.swift in Sources */,
 				359C76512C9AEEB800B5A659 /* ToDoItemsListViewController.swift in Sources */,
 				359C76412C999B0900B5A659 /* ToDoItemStore.swift in Sources */,
 				35AF95FB2C92D8EF00558869 /* SceneDelegate.swift in Sources */,

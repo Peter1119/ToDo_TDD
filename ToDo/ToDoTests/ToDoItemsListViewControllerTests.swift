@@ -45,4 +45,18 @@ final class ToDoItemsListViewControllerTests: XCTestCase {
         let result = sut.tableView.numberOfRows(inSection: 0)
         XCTAssertEqual(result, 2)
     }
+    
+    func test_cellForRowAt_cell이Title과함께나와야한다() throws {
+        let titleUnderTest = "dummy 1"
+        toDoItemStoreMock.itemPublisher.send([
+            ToDoItem(title: titleUnderTest)
+        ])
+        
+        let tableView = sut.tableView
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cell = try XCTUnwrap(
+            tableView.dataSource?.tableView(tableView, cellForRowAt: indexPath) as? ToDoItemCell
+        )
+        XCTAssertEqual(cell.titleLabel.text, titleUnderTest)
+    }
 }
