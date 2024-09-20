@@ -47,6 +47,7 @@ class ToDoItemsListViewController: UIViewController {
     
     // MARK: - Configuration
     private func configuration() {
+        self.tableView.delegate = self
         self.tableView.register(
             ToDoItemCell.self,
             forCellReuseIdentifier: "ToDoItemCell"
@@ -82,5 +83,15 @@ class ToDoItemsListViewController: UIViewController {
             toSection: .done
         )
         dataSource?.apply(snapshot)
+    }
+}
+
+extension ToDoItemsListViewController: UITableViewDelegate {
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        let item = items[indexPath.row]
+        delegate?.selectToDoItem(self, item: item)
     }
 }
