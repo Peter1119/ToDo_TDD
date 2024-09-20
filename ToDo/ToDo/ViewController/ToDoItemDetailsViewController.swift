@@ -21,13 +21,23 @@ class ToDoItemDetailsViewController: UIViewController {
             dateLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: toDoItem?.timeStamp ?? 0))
             descriptionLabel.text = toDoItem?.description
             locationLabel.text = toDoItem?.location?.name
+            if let coordinate = toDoItem?.location?.coordinate {
+                let locationCoordinate = CLLocationCoordinate2D(
+                    latitude: coordinate.latitude,
+                    longitude: coordinate.longitude
+                )
+                mapView.setCenter(
+                    locationCoordinate,
+                    animated: false
+                )
+            }
         }
     }
     let dateFormatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         layout()
     }
     
