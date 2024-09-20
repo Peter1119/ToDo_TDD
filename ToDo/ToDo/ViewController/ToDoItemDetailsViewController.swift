@@ -18,8 +18,12 @@ class ToDoItemDetailsViewController: UIViewController {
     var toDoItem: ToDoItem? {
         didSet {
             titleLabel.text = toDoItem?.title
+            dateLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: toDoItem?.timeStamp ?? 0))
+            descriptionLabel.text = toDoItem?.description
+            locationLabel.text = toDoItem?.location?.name
         }
     }
+    let dateFormatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()

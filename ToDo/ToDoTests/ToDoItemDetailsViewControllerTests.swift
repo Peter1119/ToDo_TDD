@@ -57,4 +57,28 @@ final class ToDoItemDetailsViewControllerTests: XCTestCase {
         sut.toDoItem = toDoItem
         XCTAssertEqual(sut.titleLabel.text, title)
     }
+    
+    func test_ToDoItem을설정하면_dateLabel이_업데이트되어야한다() {
+        let date = Date()
+        let toDoItem = ToDoItem(title: "dummy title", timeStamp: date.timeIntervalSince1970)
+        sut.toDoItem = toDoItem
+
+        XCTAssertEqual(sut.dateLabel.text, sut.dateFormatter.string(from: date))
+    }
+
+    func test_ToDoItem을설정하면_descriptionLabel이_업데이트되어야한다() {
+        let description = "dummy description"
+        let toDoItem = ToDoItem(title: "dummy title", description: description)
+        sut.toDoItem = toDoItem
+
+        XCTAssertEqual(sut.descriptionLabel.text, description)
+    }
+
+    func test_ToDoItem을설정하면_locationLabel이_업데이트되어야한다() {
+        let location = "dummy location"
+        let toDoItem = ToDoItem(title: "dummy title", location: Location(name: location))
+        sut.toDoItem = toDoItem
+
+        XCTAssertEqual(sut.locationLabel.text, location)
+    }
 }
