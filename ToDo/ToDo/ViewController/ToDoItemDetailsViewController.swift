@@ -15,7 +15,11 @@ class ToDoItemDetailsViewController: UIViewController {
     let descriptionLabel = UILabel()
     let mapView = MKMapView()
     let doneButton = UIButton()
-    var toDoItem: ToDoItem?
+    var toDoItem: ToDoItem? {
+        didSet {
+            titleLabel.text = toDoItem?.title
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
