@@ -12,7 +12,7 @@ struct ToDoItem: Equatable, Codable {
     let id: UUID
     let title: String
     let description: String?
-    let timeStamp: Double
+    let timeStamp: Double?
     let location: Location?
     var done = false
     
@@ -25,7 +25,7 @@ struct ToDoItem: Equatable, Codable {
         self.id = UUID()
         self.title = title
         self.description = description
-        self.timeStamp = timeStamp ?? 0
+        self.timeStamp = timeStamp
         self.location = location
     }
     
@@ -34,3 +34,8 @@ struct ToDoItem: Equatable, Codable {
     }
 }
 
+extension ToDoItem: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}

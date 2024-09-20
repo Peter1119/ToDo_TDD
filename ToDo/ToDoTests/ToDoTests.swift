@@ -26,7 +26,7 @@ class ToDoTests: XCTestCase {
     func test_init_시간스탬프가주어지면_시간스탬프가설정된다() {
         let timeStamp  = 1_600_000_000.0
         let item = ToDoItem(title: "Dummy", description: nil, timeStamp: timeStamp)
-        XCTAssertEqual(item.timeStamp, timeStamp, accuracy: 0.000_001)
+        XCTAssertEqual(item.timeStamp!, timeStamp, accuracy: 0.000_001)
     }
     
     func test_init_위치속성추가() {

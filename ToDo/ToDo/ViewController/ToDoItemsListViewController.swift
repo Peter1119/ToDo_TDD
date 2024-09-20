@@ -9,7 +9,13 @@ import UIKit
 import Combine
 
 class ToDoItemsListViewController: UIViewController {
+    enum Section {
+        case main
+    }
+    
     let tableView = UITableView()
+    private var dataSource: UITableViewDiffableDataSource<Section, ToDoItem>?
+    
     var toDoItemStore: ToDoItemStoreProtocol?
     private var items: [ToDoItem] = []
     private var token: AnyCancellable?
@@ -24,6 +30,7 @@ class ToDoItemsListViewController: UIViewController {
         token = toDoItemStore?.itemPublisher
             .sink(receiveValue: { [weak self] items in
                 self?.items = items
+                self?.update(with: items)
             })
     }
     
@@ -34,37 +41,32 @@ class ToDoItemsListViewController: UIViewController {
     
     // MARK: - Configuration
     private func configuration() {
-        self.tableView.dataSource = self
         self.tableView.register(
             ToDoItemCell.self,
             forCellReuseIdentifier: "ToDoItemCell"
         )
-    }
-}
-
-extension ToDoItemsListViewController: UITableViewDataSource {
-    func tableView(
-        _ tableView: UITableView,
-        numberOfRowsInSection section: Int
-    ) -> Int {
-        return items.count
+        
+        self.dataSource = UITableViewDiffableDataSource<Section, ToDoItem>(
+            tableView: self.tableView,
+            cellProvider: { [weak self] tableView, indexPath, item in
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "ToDoItemCell",
+                    for: indexPath
+                ) as! ToDoItemCell
+                cell.titleLabel.text = item.title
+                if let timestamp = item.timeStamp {
+                    let date = Date(timeIntervalSince1970: timestamp)
+                    cell.dateLabel.text = self?.dateFormatter.string(from: date)
+                }
+                return cell
+            }
+        )
     }
     
-    func tableView(
-        _ tableView: UITableView,
-        cellForRowAt indexPath: IndexPath
-    ) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: "ToDoItemCell",
-            for: indexPath
-        ) as? ToDoItemCell else { return UITableViewCell() }
-        let item = items[indexPath.row]
-        cell.titleLabel.text = item.title
-        
-        let timestamp = item.timeStamp
-        let date = Date(timeIntervalSince1970: timestamp)
-        cell.dateLabel.text = dateFormatter.string(from: date)
-
-        return cell
+    private func update(with items: [ToDoItem]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, ToDoItem>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(items)
+        dataSource?.apply(snapshot)
     }
 }
