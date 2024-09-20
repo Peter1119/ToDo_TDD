@@ -50,4 +50,11 @@ final class ToDoItemDetailsViewControllerTests: XCTestCase {
         let subView = sut.doneButton
         XCTAssertTrue(subView.isDescendant(of: sut.view))
     }
+    
+    func test_ToDoItems을설정하면_titleLabel이업데이트되어야한다() {
+        let title = "dummy Title"
+        let toDoItem = ToDoItem(title: title)
+        sut.toDoItem = toDoItem
+        XCTAssertEqual(sut.titleLabel.text, title)
+    }
 }
