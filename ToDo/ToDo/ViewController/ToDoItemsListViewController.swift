@@ -8,6 +8,10 @@
 import UIKit
 import Combine
 
+protocol ToDoItemsListViewControllerProtocol {
+    func selectToDoItem(_ viewController: UIViewController, item: ToDoItem)
+}
+
 class ToDoItemsListViewController: UIViewController {
     enum Section {
         case todo
@@ -16,6 +20,7 @@ class ToDoItemsListViewController: UIViewController {
     
     let tableView = UITableView()
     private var dataSource: UITableViewDiffableDataSource<Section, ToDoItem>?
+    var delegate: ToDoItemsListViewControllerProtocol?
     
     var toDoItemStore: ToDoItemStoreProtocol?
     private var items: [ToDoItem] = []

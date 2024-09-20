@@ -99,4 +99,16 @@ final class ToDoItemsListViewControllerTests: XCTestCase {
         let result = sut.tableView.numberOfSections
         XCTAssertEqual(result, 2)
     }
+    
+    func test_셀이선택이되면_델리게이트가호출된다() throws {
+        let delegateMock = ToDoItemsListViewControllerProtocolMock()
+        sut.delegate = delegateMock
+        let toDoItem = ToDoItem(title: "dummy 1")
+        toDoItemStoreMock.itemPublisher.send([toDoItem])
+        let tableView = sut.tableView
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableView.delegate?.tableView?(tableView, didSelectRowAt: indexPath)
+        
+        XCTAssertEqual(delegateMock.selectToDoItemReceivedArguments?.item, toDoItem)
+    }
 }
