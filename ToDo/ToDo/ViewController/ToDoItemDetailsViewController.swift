@@ -6,9 +6,15 @@
 //
 
 import UIKit
+import MapKit
 
 class ToDoItemDetailsViewController: UIViewController {
     let titleLabel = UILabel()
+    let dateLabel = UILabel()
+    let locationLabel = UILabel()
+    let descriptionLabel = UILabel()
+    let mapView = MKMapView()
+    let doneButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,5 +25,10 @@ class ToDoItemDetailsViewController: UIViewController {
     // MARK: - Layout
     private func layout() {
         self.view.addSubview(titleLabel)
+        self.view.addSubview(dateLabel)
+        self.view.addSubview(locationLabel)
+        self.view.addSubview(descriptionLabel)
+        self.view.addSubview(mapView)
+        self.view.addSubview(doneButton)
     }
 }

@@ -21,8 +21,33 @@ final class ToDoItemDetailsViewControllerTests: XCTestCase {
         sut = nil
     }
     
-    func test_view에는_타이틀라벨이있다() {
+    func test_view에는_타이틀라벨이_있다() {
         let subView = sut.titleLabel
+        XCTAssertTrue(subView.isDescendant(of: sut.view))
+    }
+
+    func test_view에는_데이트라벨이_있다() {
+        let subView = sut.dateLabel
+        XCTAssertTrue(subView.isDescendant(of: sut.view))
+    }
+
+    func test_view에는_로케이션라벨이_있다() {
+        let subView = sut.locationLabel
+        XCTAssertTrue(subView.isDescendant(of: sut.view))
+    }
+
+    func test_view에는_디스크립션라벨이_있다() {
+        let subView = sut.descriptionLabel
+        XCTAssertTrue(subView.isDescendant(of: sut.view))
+    }
+
+    func test_view에는_맵뷰가_있다() {
+        let subView = sut.mapView
+        XCTAssertTrue(subView.isDescendant(of: sut.view))
+    }
+    
+    func test_view에는_doneButton이_있다() {
+        let subView = sut.doneButton
         XCTAssertTrue(subView.isDescendant(of: sut.view))
     }
 }
