@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		354520692C9CF56D003F48D9 /* ToDoItemsListViewControllerProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354520682C9CF56D003F48D9 /* ToDoItemsListViewControllerProtocolMock.swift */; };
+		3545206B2C9CF89B003F48D9 /* ToDoItemDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545206A2C9CF89B003F48D9 /* ToDoItemDetailsViewControllerTests.swift */; };
+		3545206D2C9CF8CB003F48D9 /* ToDoItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545206C2C9CF8CB003F48D9 /* ToDoItemDetailsViewController.swift */; };
 		359C763D2C9994DF00B5A659 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C763C2C9994DF00B5A659 /* LocationTests.swift */; };
 		359C763F2C999A9700B5A659 /* ToDoItemStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C763E2C999A9700B5A659 /* ToDoItemStoreTests.swift */; };
 		359C76412C999B0900B5A659 /* ToDoItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C76402C999B0900B5A659 /* ToDoItemStore.swift */; };
@@ -49,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		354520682C9CF56D003F48D9 /* ToDoItemsListViewControllerProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemsListViewControllerProtocolMock.swift; sourceTree = "<group>"; };
+		3545206A2C9CF89B003F48D9 /* ToDoItemDetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemDetailsViewControllerTests.swift; sourceTree = "<group>"; };
+		3545206C2C9CF8CB003F48D9 /* ToDoItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemDetailsViewController.swift; sourceTree = "<group>"; };
 		359C763C2C9994DF00B5A659 /* LocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
 		359C763E2C999A9700B5A659 /* ToDoItemStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemStoreTests.swift; sourceTree = "<group>"; };
 		359C76402C999B0900B5A659 /* ToDoItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemStore.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				359C76502C9AEEB800B5A659 /* ToDoItemsListViewController.swift */,
+				3545206C2C9CF8CB003F48D9 /* ToDoItemDetailsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 				359C76522C9AF24E00B5A659 /* ToDoItemStoreProtocolMock.swift */,
 				359C76572C9AF92A00B5A659 /* ToDoItemCellTests.swift */,
 				354520682C9CF56D003F48D9 /* ToDoItemsListViewControllerProtocolMock.swift */,
+				3545206A2C9CF89B003F48D9 /* ToDoItemDetailsViewControllerTests.swift */,
 			);
 			path = ToDoTests;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 			files = (
 				359C76462C9AD7C100B5A659 /* Coordinate.swift in Sources */,
 				35AF95F92C92D8EF00558869 /* AppDelegate.swift in Sources */,
+				3545206D2C9CF8CB003F48D9 /* ToDoItemDetailsViewController.swift in Sources */,
 				359C76482C9ADA1500B5A659 /* FileManager+.swift in Sources */,
 				35AF962B2C92D97C00558869 /* Location.swift in Sources */,
 				35AF96292C92D96F00558869 /* ToDoItem.swift in Sources */,
@@ -364,6 +371,7 @@
 				359C76532C9AF24E00B5A659 /* ToDoItemStoreProtocolMock.swift in Sources */,
 				359C76442C9AB2D800B5A659 /* XCTestCase+extension.swift in Sources */,
 				359C763D2C9994DF00B5A659 /* LocationTests.swift in Sources */,
+				3545206B2C9CF89B003F48D9 /* ToDoItemDetailsViewControllerTests.swift in Sources */,
 				359C76582C9AF92A00B5A659 /* ToDoItemCellTests.swift in Sources */,
 				35AF96102C92D8F000558869 /* ToDoTests.swift in Sources */,
 				354520692C9CF56D003F48D9 /* ToDoItemsListViewControllerProtocolMock.swift in Sources */,
