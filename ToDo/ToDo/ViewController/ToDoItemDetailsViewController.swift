@@ -35,10 +35,23 @@ class ToDoItemDetailsViewController: UIViewController {
     }
     let dateFormatter = DateFormatter()
     
+    var toDoItemStore: ToDoItemStoreProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         layout()
+        configuration()
+    }
+    
+    // MARK: - Configuration
+    private func configuration() {
+        doneButton.addAction(
+            UIAction(handler: { [weak self] _ in
+                self?.checkItem()
+            }),
+            for: .touchUpInside
+        )
     }
     
     // MARK: - Layout
@@ -49,5 +62,11 @@ class ToDoItemDetailsViewController: UIViewController {
         self.view.addSubview(descriptionLabel)
         self.view.addSubview(mapView)
         self.view.addSubview(doneButton)
+    }
+    
+    private func checkItem() {
+        if let toDoItem = toDoItem {
+            toDoItemStore?.check(toDoItem)
+        }
     }
 }
