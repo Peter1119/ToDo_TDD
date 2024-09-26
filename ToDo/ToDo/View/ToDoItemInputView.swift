@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ToDoItemInputView: View {
-    @ObservedObject var toDoItemData: ToDoItemData
+    @ObservedObject var data: ToDoItemData
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TextField("Title", text: $data.title)
     }
 }
 
 #Preview {
-    ToDoItemInputView(toDoItemData: ToDoItemData())
+    ToDoItemInputView(data: ToDoItemData())
 }

@@ -16,7 +16,7 @@ final class ToDoItemInputViewTests: XCTestCase {
     
     override func setUpWithError() throws {
         todoItemData = ToDoItemData()
-        sut = ToDoItemInputView(toDoItemData: todoItemData)
+        sut = ToDoItemInputView(data: todoItemData)
     }
 
     override func tearDownWithError() throws {
