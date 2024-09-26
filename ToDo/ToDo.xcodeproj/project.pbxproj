@@ -10,6 +10,10 @@
 		354520692C9CF56D003F48D9 /* ToDoItemsListViewControllerProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354520682C9CF56D003F48D9 /* ToDoItemsListViewControllerProtocolMock.swift */; };
 		3545206B2C9CF89B003F48D9 /* ToDoItemDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545206A2C9CF89B003F48D9 /* ToDoItemDetailsViewControllerTests.swift */; };
 		3545206D2C9CF8CB003F48D9 /* ToDoItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545206C2C9CF8CB003F48D9 /* ToDoItemDetailsViewController.swift */; };
+		356B42482CA51AD70087858A /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 356B42472CA51AD70087858A /* ViewInspector */; };
+		356B424A2CA51B500087858A /* ToDoItemInputViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B42492CA51B500087858A /* ToDoItemInputViewTests.swift */; };
+		356B424C2CA51BA00087858A /* ToDoItemInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B424B2CA51BA00087858A /* ToDoItemInputView.swift */; };
+		356B424E2CA51BDD0087858A /* ToDoItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B424D2CA51BDD0087858A /* ToDoItemData.swift */; };
 		359C763D2C9994DF00B5A659 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C763C2C9994DF00B5A659 /* LocationTests.swift */; };
 		359C763F2C999A9700B5A659 /* ToDoItemStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C763E2C999A9700B5A659 /* ToDoItemStoreTests.swift */; };
 		359C76412C999B0900B5A659 /* ToDoItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359C76402C999B0900B5A659 /* ToDoItemStore.swift */; };
@@ -53,6 +57,9 @@
 		354520682C9CF56D003F48D9 /* ToDoItemsListViewControllerProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemsListViewControllerProtocolMock.swift; sourceTree = "<group>"; };
 		3545206A2C9CF89B003F48D9 /* ToDoItemDetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemDetailsViewControllerTests.swift; sourceTree = "<group>"; };
 		3545206C2C9CF8CB003F48D9 /* ToDoItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemDetailsViewController.swift; sourceTree = "<group>"; };
+		356B42492CA51B500087858A /* ToDoItemInputViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemInputViewTests.swift; sourceTree = "<group>"; };
+		356B424B2CA51BA00087858A /* ToDoItemInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemInputView.swift; sourceTree = "<group>"; };
+		356B424D2CA51BDD0087858A /* ToDoItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemData.swift; sourceTree = "<group>"; };
 		359C763C2C9994DF00B5A659 /* LocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
 		359C763E2C999A9700B5A659 /* ToDoItemStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemStoreTests.swift; sourceTree = "<group>"; };
 		359C76402C999B0900B5A659 /* ToDoItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemStore.swift; sourceTree = "<group>"; };
@@ -92,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356B42482CA51AD70087858A /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +147,7 @@
 				35AF962A2C92D97C00558869 /* Location.swift */,
 				359C76402C999B0900B5A659 /* ToDoItemStore.swift */,
 				359C76452C9AD7C100B5A659 /* Coordinate.swift */,
+				356B424D2CA51BDD0087858A /* ToDoItemData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				359C76552C9AF69A00B5A659 /* ToDoItemCell.swift */,
+				356B424B2CA51BA00087858A /* ToDoItemInputView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,6 +216,7 @@
 				359C76572C9AF92A00B5A659 /* ToDoItemCellTests.swift */,
 				354520682C9CF56D003F48D9 /* ToDoItemsListViewControllerProtocolMock.swift */,
 				3545206A2C9CF89B003F48D9 /* ToDoItemDetailsViewControllerTests.swift */,
+				356B42492CA51B500087858A /* ToDoItemInputViewTests.swift */,
 			);
 			path = ToDoTests;
 			sourceTree = "<group>";
@@ -307,6 +318,9 @@
 				Base,
 			);
 			mainGroup = 35AF95EC2C92D8EF00558869;
+			packageReferences = (
+				356B42462CA51AD70087858A /* XCRemoteSwiftPackageReference "ViewInspector" */,
+			);
 			productRefGroup = 35AF95F62C92D8EF00558869 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -349,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356B424E2CA51BDD0087858A /* ToDoItemData.swift in Sources */,
 				359C76462C9AD7C100B5A659 /* Coordinate.swift in Sources */,
 				35AF95F92C92D8EF00558869 /* AppDelegate.swift in Sources */,
 				3545206D2C9CF8CB003F48D9 /* ToDoItemDetailsViewController.swift in Sources */,
@@ -359,6 +374,7 @@
 				359C76512C9AEEB800B5A659 /* ToDoItemsListViewController.swift in Sources */,
 				359C76412C999B0900B5A659 /* ToDoItemStore.swift in Sources */,
 				35AF95FB2C92D8EF00558869 /* SceneDelegate.swift in Sources */,
+				356B424C2CA51BA00087858A /* ToDoItemInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +390,7 @@
 				3545206B2C9CF89B003F48D9 /* ToDoItemDetailsViewControllerTests.swift in Sources */,
 				359C76582C9AF92A00B5A659 /* ToDoItemCellTests.swift in Sources */,
 				35AF96102C92D8F000558869 /* ToDoTests.swift in Sources */,
+				356B424A2CA51B500087858A /* ToDoItemInputViewTests.swift in Sources */,
 				354520692C9CF56D003F48D9 /* ToDoItemsListViewControllerProtocolMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,6 +720,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		356B42462CA51AD70087858A /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		356B42472CA51AD70087858A /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 356B42462CA51AD70087858A /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 35AF95ED2C92D8EF00558869 /* Project object */;
 }
