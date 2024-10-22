@@ -21,21 +21,27 @@ final class APIClientTests: XCTestCase {
         sut = nil
     }
     
-    func test_coordinate_fetchsCoordinate() {
+    func test_coordinate_fetchesCoordinate() {
         let geoCoderMock = GeoCoderProtocolMock()
         sut.geoCoder = geoCoderMock
         let location = CLLocation(latitude: 1, longitude: 2)
         let placemark = CLPlacemark(location: location, name: nil, postalAddress: nil)
-        let expectedAddress = "dummy address"
         var result: Coordinate?
         
-        sut.coordinate(for: expectedAddress) { coordinate in
+        sut.coordinate(for: "") { coordinate in
             result = coordinate
         }
         
         geoCoderMock.completionHandler?([placemark], nil)
-        XCTAssertEqual(geoCoderMock.geocodeAddressString, expectedAddress)
         XCTAssertEqual(result?.latitude, location.coordinate.latitude)
         XCTAssertEqual(result?.longitude, location.coordinate.longitude)
+    }
+    
+    func test_coordinate_GeoCoder가Address가있으면같아야한다() {
+        let geoCoderMock = GeoCoderProtocolMock()
+        sut.geoCoder = geoCoderMock
+        let expectedAddress = "dummy_address"
+        sut.coordinate(for: expectedAddress, completion: { _ in })
+        XCTAssertEqual(geoCoderMock.geocodeAddressString, expectedAddress)
     }
 }

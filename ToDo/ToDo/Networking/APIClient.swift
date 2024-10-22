@@ -17,15 +17,29 @@ protocol GeoCoderProtocol {
 
 extension CLGeocoder: GeoCoderProtocol {}
 
-struct APIClient {
+// APIClient.swift
+protocol APIClientProtocol {
+    func coordinate(
+      for: String,
+      completion: @escaping (Coordinate?) -> Void
+    )
+}
+
+class APIClient {
     lazy var geoCoder: GeoCoderProtocol = CLGeocoder()
     
-    mutating func coordinate(
+    func coordinate(
         for address: String,
-        completion: (Coordinate?) -> Void
+        completion: @escaping (Coordinate?) -> Void
     ) {
         geoCoder.geocodeAddressString(address) { placemarks, error in
+            guard let clCoordinate = placemarks?.first?.location?.coordinate else {
+                completion(nil)
+                return
+            }
             
+            let coordinate = Coordinate(latitude: clCoordinate.latitude, longitude: clCoordinate.longitude)
+            completion(coordinate)
         }
     }
 }
