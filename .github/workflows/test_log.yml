@@ -25,13 +25,9 @@ jobs:
           echo "${{ github.event }}"
 
       - name: Check and Dispatch for Label1
-        run: |
-            echo "Label 1 is detected"
         if: contains(github.event.pull_request.labels.*.name, 'label1')
         uses: ./github/workflows/label1_cd.yml
 
       - name: Check and Dispatch for Label2
-        run: |
-            echo "Label 2 is detected"
         if: contains(github.event.pull_request.labels.*.name, 'label2')
         uses: ./github/workflows/label2_cd.yml
