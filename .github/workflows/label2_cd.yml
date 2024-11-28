@@ -1,7 +1,7 @@
 name: Label2 CD Workflow
 
 on:
-  workflow_call: {}
+  workflow_call:
 
 jobs:
   label2-log:

@@ -26,8 +26,8 @@ jobs:
 
       - name: Check and Dispatch for Label1
         if: contains(github.event.pull_request.labels.*.name, 'label1')
-        uses: ./github/workflows/label1_cd.yml
+        uses: ./.github/workflows/label1_cd.yml
 
       - name: Check and Dispatch for Label2
         if: contains(github.event.pull_request.labels.*.name, 'label2')
-        uses: ./github/workflows/label2_cd.yml
+        uses: ./.github/workflows/label2_cd.yml

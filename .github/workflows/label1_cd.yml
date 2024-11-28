@@ -1,7 +1,7 @@
 name: Label1 CD Workflow
 
 on:
-    workflow_call: {}
+    workflow_call:
 
 jobs:
   label1-log:
