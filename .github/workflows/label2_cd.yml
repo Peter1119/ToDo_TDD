@@ -1,26 +1,23 @@
-name: Label2 CD Workflow
+name: Label2 CD 워크플로우
 
 on:
-  workflow_call:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
 
 jobs:
-  label2-log:
+  label2-job:
+    # job 레벨에서 직접 라벨 조건 확인
+    if: contains(github.event.pull_request.labels.*.name, 'label2')
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout code
+      - name: 코드 체크아웃
         uses: actions/checkout@v3
 
-      - name: Log PR Details
+      - name: Label2 작업 실행
         run: |
-          echo "PR Title: ${{ github.event.pull_request.title }}"
-          echo "PR Number: ${{ github.event.pull_request.number }}"
-          echo "PR Author: ${{ github.event.pull_request.user.login }}"
-          echo "Current Labels: ${{ github.event.pull_request.labels[*].name }}"
-
-      - name: Check for label2
-        if: contains(github.event.pull_request.labels.*.name, 'label2')
-        run: |
-          echo "Label2 detected! Running tasks for Label2."
-        else:
-          echo "Label2 not detected. Exiting."
+          echo "Label2 작업 시작"
+          # 여기에 Label2에 대한 실제 작업 추가
