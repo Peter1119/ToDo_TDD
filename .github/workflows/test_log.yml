@@ -1,28 +1,35 @@
 # This workflow will build a Swift project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
 
-name: Swift
+name: Central Workflow
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    push:
+        branches:
+        - main
+#  pull_request:
+#    types:
+#      - closed
+#    branches:
+#      - main
 
 jobs:
-  log-test:
-    runs-on: ubuntu-latest # macOS 대신 Ubuntu 사용 가능
+  route-labels:
+    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Print a simple log
-        run: echo "Hello, GitHub Actions! This is a test log."
-
-      - name: Display environment variables
-        run: env
-
-      - name: Simulate a simple script
+      - name: Log PR Details
         run: |
-          echo "This is a multi-line script."
-          echo "You can run basic shell commands here."
+          echo "PR Title: ${{ github.event.pull_request.title }}"
+          echo "Labels: ${{ github.event.pull_request.labels[*].name }}"
+
+      - name: Check and Dispatch for Label1
+        if: contains(github.event.pull_request.labels.*.name, 'label1')
+        uses: ./.github/workflows/label1_cd.yml
+
+      - name: Check and Dispatch for Label2
+        if: contains(github.event.pull_request.labels.*.name, 'label2')
+        uses: ./.github/workflows/label2_cd.yml

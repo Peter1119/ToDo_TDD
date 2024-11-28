@@ -1,0 +1,26 @@
+name: Label2 CD Workflow
+
+on:
+  workflow_call: {}
+
+jobs:
+  label2-log:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Log PR Details
+        run: |
+          echo "PR Title: ${{ github.event.pull_request.title }}"
+          echo "PR Number: ${{ github.event.pull_request.number }}"
+          echo "PR Author: ${{ github.event.pull_request.user.login }}"
+          echo "Current Labels: ${{ github.event.pull_request.labels[*].name }}"
+
+      - name: Check for label2
+        if: contains(github.event.pull_request.labels.*.name, 'label2')
+        run: |
+          echo "Label2 detected! Running tasks for Label2."
+        else:
+          echo "Label2 not detected. Exiting."
