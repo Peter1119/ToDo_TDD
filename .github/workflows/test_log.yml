@@ -22,6 +22,7 @@ jobs:
         run: |
           echo "PR Title: ${{ github.event.pull_request.title }}"
           echo "Labels: ${{ github.event.pull_request.labels[*].name }}"
+          echo "${{ github.event }}"
 
       - name: Check and Dispatch for Label1
         if: contains(github.event.pull_request.labels.*.name, 'label1')
